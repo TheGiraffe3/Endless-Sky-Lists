@@ -33,14 +33,13 @@ label:hover{
 .blocked,
 .blocked label{
 	animation:none;
-	color:#666;
+	color:#777;
 	pointer-events:none;
 }
 .dark,
 .dark:hover{
 	animation:none;
-	color:#666;
-	font-weight:bold;
+	color:#777;
 }
 .hidden{
 	display:none;
