@@ -20,7 +20,7 @@ function actionUpload(that){
 			for(i2=0;i2<lines.length;i2++){
 				//	Outfits
 				if(lines[i2].startsWith(`outfit `)){
-					elements[0].push([lines[i2].slice(7),[]])
+					elements[0].push([lines[i2].split("#")[0].slice(7),[]])
 					for(i3=i2+1;i3<lines.length;i3++){
 						if(!lines[i3].startsWith(`\t`)){
 							break
@@ -50,7 +50,7 @@ function actionUpload(that){
 				//	Ships
 				if(lines[i2].startsWith(`ship `)){
 					if(!lines[i2].slice(5).includes(`" "`)){
-						elements[1].push([lines[i2].slice(5).replaceAll(`"`,``).replaceAll("`",``),[],[]])
+						elements[1].push([lines[i2].split("#")[0].slice(5).replaceAll(`"`,``).replaceAll("`",``).trim(),[],[]])
 						for(i3=i2+1;i3<lines.length;i3++){
 							if(!lines[i3].startsWith(`\t`)){
 								break
@@ -70,15 +70,15 @@ function actionUpload(that){
 				}
 				//	Systems
 				if(lines[i2].startsWith(`system `)){
-					elements[2].push(lines[i2].slice(7).replaceAll(`"`,``))
+					elements[2].push(lines[i2].split("#")[0].slice(7).replaceAll(`"`,``))
 				}
 				//	Persons
 				if(lines[i2].startsWith(`person `)){
-					elements[3].push(lines[i2].slice(7).replaceAll(`"`,``))
+					elements[3].push(lines[i2].split("#")[0].slice(7).replaceAll(`"`,``))
 				}
 				//	Governments
 				if(lines[i2].startsWith(`government `)){
-					elements[4].push([lines[i2].slice(11).replaceAll(`"`,``),[]])
+					elements[4].push([lines[i2].split("#")[0].slice(11).replaceAll(`"`,``),[]])
 					for(i3=i2+1;i3<lines.length;i3++){
 						if(!lines[i3].startsWith(`\t`)){
 							break
