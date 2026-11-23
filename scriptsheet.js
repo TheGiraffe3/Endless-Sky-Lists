@@ -16,7 +16,7 @@ function actionUpload(that){
 		systemsReader.readAsText(files[i1])
 		systemsReader.onload=function(e){
 			var output=e.target.result
-			lines=output.split(`\n`)
+			lines=output.split(/\r?\n/)
 			for(i2=0;i2<lines.length;i2++){
 				//	Outfits
 				if(lines[i2].startsWith(`outfit `)){
